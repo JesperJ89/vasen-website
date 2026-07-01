@@ -6,8 +6,11 @@ const buttons = document.querySelectorAll("nav button");
 const panels = document.querySelectorAll(".panel");
 
 
-// ===== ENTER SITE =====
+// Dölj menyn från början
+menu.style.display = "none";
 
+
+// Klick på VÄSEN
 title.addEventListener("click", () => {
 
     intro.classList.add("fade-out");
@@ -15,30 +18,40 @@ title.addEventListener("click", () => {
     setTimeout(() => {
 
         intro.style.display = "none";
-
-        menu.classList.add("show");
+        menu.style.display = "flex";
 
     }, 1000);
 
 });
 
 
-// ===== MENU =====
+// Dölj alla paneler
+function hidePanels() {
 
+    panels.forEach(panel => {
+
+        panel.style.display = "none";
+
+    });
+
+}
+
+
+// Visa rätt panel
 buttons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const target = button.dataset.section;
+        hidePanels();
 
-        panels.forEach(panel => {
+        const target = document.getElementById(button.dataset.target);
 
-            panel.classList.remove("active");
-
-        });
-
-        document.getElementById(target).classList.add("active");
+        target.style.display = "block";
 
     });
 
 });
+
+
+// Ingen panel visas när sidan öppnas
+hidePanels();
