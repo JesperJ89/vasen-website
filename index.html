@@ -2,54 +2,106 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>VÄSEN</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
     <!-- INTRO -->
 
-    <section id="intro" class="intro">
+    <section id="intro">
 
         <h1 id="title">V Ä S E N</h1>
 
     </section>
 
-
     <!-- MENU -->
 
-    <section id="menu" class="menu hidden">
+    <section id="menu">
 
         <nav>
 
-            <a href="#short-film">The Short Film</a>
+            <button data-section="short">
+                The Short Film
+            </button>
 
-            <a href="#feature-film">The Feature Film</a>
+            <button data-section="feature">
+                The Feature Film
+            </button>
 
-            <a href="#news">News</a>
+            <button data-section="news">
+                News
+            </button>
 
-            <a href="#contact">Contact</a>
+            <button data-section="contact">
+                Contact
+            </button>
 
         </nav>
 
+        <div id="content">
+
+            <article class="panel active" id="short">
+
+                <h2>The Short Film</h2>
+
+                <p>
+                    Currently on its festival journey.
+                </p>
+
+            </article>
+
+            <article class="panel" id="feature">
+
+                <h2>The Feature Film</h2>
+
+                <p>
+                    Currently in development.
+                </p>
+
+            </article>
+
+            <article class="panel" id="news">
+
+                <h2>News</h2>
+
+                <p>
+                    More updates coming soon.
+                </p>
+
+            </article>
+
+            <article class="panel" id="contact">
+
+                <h2>Contact</h2>
+
+                <p>
+
+                    General enquiries<br><br>
+
+                    <a href="mailto:magnus@ntproductions.se">
+                        magnus@ntproductions.se
+                    </a>
+
+                </p>
+
+            </article>
+
+        </div>
+
     </section>
-
-
-    <!-- CONTENT -->
-
-    <section id="short-film"></section>
-
-    <section id="feature-film"></section>
-
-    <section id="news"></section>
-
-    <section id="contact"></section>
 
     <script src="script.js"></script>
 
