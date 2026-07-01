@@ -1,17 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
+const title = document.getElementById("title");
+const intro = document.getElementById("intro");
+const menu = document.getElementById("menu");
 
-    const title = document.getElementById("title");
+title.addEventListener("click", () => {
 
-    title.addEventListener("click", () => {
+    // Tona ut titeln
+    title.style.opacity = "0";
 
-        document.body.classList.add("fade-out");
+    // Vänta tills animationen är klar
+    setTimeout(() => {
 
-        setTimeout(() => {
+        // Dölj första sidan
+        intro.style.display = "none";
 
-            window.location.href = "menu.html";
+        // Visa menyn
+        menu.classList.remove("hidden");
 
-        }, 1000);
-
-    });
+    }, 800);
 
 });
