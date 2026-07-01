@@ -1,65 +1,280 @@
+/* ===========================
+   RESET
+=========================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+
+/* ===========================
+   BODY
+=========================== */
 
 body {
+
     background: #000;
-    color: #fff;
-    font-family: "IM Fell English", serif;
+    color: #f3f0e6;
+
+    font-family: "Inter", sans-serif;
+
+    overflow: hidden;
+
 }
 
-.intro {
-    height: 100vh;
+
+/* ===========================
+   INTRO
+=========================== */
+
+#intro {
+
+    position: fixed;
+    inset: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: #000;
+
+    transition: opacity 1s ease;
+
+    z-index: 100;
+
 }
+
+
+#intro.fade-out {
+
+    opacity: 0;
+    pointer-events: none;
+
+}
+
 
 #title {
-    font-size: clamp(3rem, 8vw, 7rem);
+
+    font-family: "IM Fell English", serif;
+
+    font-size: clamp(4rem, 10vw, 9rem);
+
     font-weight: normal;
-    letter-spacing: 0.5em;
+
+    letter-spacing: .8em;
+
+    padding-left: .8em;
+
     cursor: pointer;
+
     user-select: none;
-    transition: opacity 0.8s ease;
+
+    animation: fadeIn 2s ease;
+
+    transition: letter-spacing .6s ease,
+                text-shadow .6s ease,
+                color .6s ease;
+
 }
 
-.menu {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+#title:hover {
+
+    letter-spacing: .9em;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.15),
+        0 0 30px rgba(255,255,255,.08);
+
 }
 
-.menu nav {
+
+/* ===========================
+   MENU
+=========================== */
+
+#menu {
+
+    position: fixed;
+    inset: 0;
+
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 1s ease;
+
+}
+
+
+#menu.show {
+
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+nav {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
     text-align: center;
+
 }
 
-.menu a {
+
+nav button {
+
+    background: none;
+    border: none;
+
+    color: #f3f0e6;
+
+    font-family: "IM Fell English", serif;
+
+    font-size: 2rem;
+
+    letter-spacing: .12em;
+
+    cursor: pointer;
+
+    transition: .35s ease;
+
+}
+
+
+nav button:hover {
+
     color: white;
-    text-decoration: none;
-    font-size: 2.2rem;
-    transition: opacity .25s ease;
+
+    letter-spacing: .22em;
+
 }
 
-.menu a:hover {
-    opacity: .6;
+
+/* ===========================
+   CONTENT
+=========================== */
+
+#content {
+
+    margin-top: 70px;
+
+    width: 700px;
+    max-width: 90vw;
+
+    min-height: 140px;
+
+    text-align: center;
+
 }
 
-.hidden {
+
+.panel {
+
     display: none;
+
+    animation: fadeContent .5s ease;
+
 }
 
-section:not(.intro):not(.menu) {
-    min-height: 100vh;
-    padding: 8rem 10vw;
+
+.panel.active {
+
+    display: block;
+
+}
+
+
+.panel h2 {
+
+    font-family: "IM Fell English", serif;
+
+    font-size: 2rem;
+
+    margin-bottom: 18px;
+
+    font-weight: normal;
+
+}
+
+
+.panel p {
+
+    line-height: 1.8;
+
+    opacity: .85;
+
+}
+
+
+.panel a {
+
+    color: #f3f0e6;
+
+    text-decoration: none;
+
+}
+
+
+.panel a:hover {
+
+    color: white;
+
+}
+
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+        filter: blur(6px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        filter: blur(0);
+
+    }
+
+}
+
+
+@keyframes fadeContent {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
 }
