@@ -3,55 +3,50 @@ const menu = document.getElementById("menu");
 const title = document.getElementById("title");
 
 const buttons = document.querySelectorAll("nav button");
-const panels = document.querySelectorAll(".panel");
-
+const sections = document.querySelectorAll(".section");
 
 // Dölj menyn från början
-menu.style.display = "none";
+menu.style.opacity = "0";
+menu.style.pointerEvents = "none";
 
+// Dölj alla informationsrutor
+sections.forEach(section => {
+    section.style.display = "none";
+});
 
 // Klick på VÄSEN
 title.addEventListener("click", () => {
 
-    intro.classList.add("fade-out");
+    intro.style.opacity = "0";
 
     setTimeout(() => {
 
-        intro.style.display = "none";
-        menu.style.display = "flex";
+        intro.style.pointerEvents = "none";
 
-    }, 1000);
+        menu.style.opacity = "1";
+        menu.style.pointerEvents = "auto";
+
+    }, 900);
 
 });
 
-
-// Dölj alla paneler
-function hidePanels() {
-
-    panels.forEach(panel => {
-
-        panel.style.display = "none";
-
-    });
-
-}
-
-
-// Visa rätt panel
+// Klick på menyval
 buttons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        hidePanels();
+        // Dölj alla sektioner
+        sections.forEach(section => {
+            section.style.display = "none";
+        });
 
-        const target = document.getElementById(button.dataset.target);
+        // Visa vald sektion
+        const panel = document.getElementById(button.dataset.panel);
 
-        target.style.display = "block";
+        if(panel){
+            panel.style.display = "block";
+        }
 
     });
 
 });
-
-
-// Ingen panel visas när sidan öppnas
-hidePanels();
