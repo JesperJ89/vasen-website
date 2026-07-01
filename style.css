@@ -1,231 +1,79 @@
-/* ===========================
-   RESET
-=========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-
-/* ===========================
-   BODY
-=========================== */
-
 html,
 body{
-
-    width:100%;
+    margin:0;
     height:100%;
-
-    overflow:hidden;
-
     background:#000;
     color:#f3f0e6;
-
+    overflow:hidden;
 }
 
 body{
-
-    font-family:"Inter",sans-serif;
-
+    font-family:Inter,sans-serif;
 }
 
+#intro,
+#menu{
 
-/* ===========================
-   INTRO
-=========================== */
-
-#intro{
-
-    position:fixed;
+    position:absolute;
     inset:0;
 
     display:flex;
+    flex-direction:column;
+
     justify-content:center;
     align-items:center;
 
     background:#000;
 
-    transition:opacity 1s ease;
-
-    z-index:10;
+    transition:opacity 1.5s ease;
 
 }
 
-#intro.fade-out{
+#menu{
 
     opacity:0;
-
     pointer-events:none;
 
 }
 
-#title{
+h1{
 
     font-family:"IM Fell English",serif;
 
-    font-size:clamp(70px,10vw,170px);
+    font-size:clamp(80px,10vw,170px);
+
+    letter-spacing:.85em;
+
+    padding-left:.85em;
 
     font-weight:400;
 
-    letter-spacing:.8em;
+    cursor:pointer;
 
-    padding-left:.8em;
+    animation:fade 4s ease forwards;
+
+    transition:
+        letter-spacing 1s,
+        color 1s,
+        text-shadow 1s;
 
     color:#f3f0e6;
 
-    cursor:pointer;
-
-    user-select:none;
-
-    animation:fadeIn 2s ease;
-
-    transition:.4s;
-
 }
 
-#title:hover{
+h1:hover{
+
+    letter-spacing:1em;
 
     color:#fff;
 
-    letter-spacing:.9em;
+    text-shadow:
+        0 0 10px rgba(255,255,255,.2),
+        0 0 30px rgba(255,255,255,.1);
 
 }
 
-
-/* ===========================
-   MENU
-=========================== */
-
-#menu{
-
-    position:fixed;
-    inset:0;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    background:#000;
-
-}
-
-
-/* ===========================
-   NAVIGATION
-=========================== */
-
-nav{
-
-    display:flex;
-    flex-direction:column;
-
-    gap:18px;
-
-    text-align:center;
-
-}
-
-nav button{
-
-    background:none;
-    border:none;
-    outline:none;
-
-    color:#f3f0e6;
-
-    cursor:pointer;
-
-    font-family:"IM Fell English",serif;
-
-    font-size:2rem;
-
-    letter-spacing:.15em;
-
-    transition:.35s;
-
-}
-
-nav button:hover{
-
-    color:#fff;
-
-    letter-spacing:.22em;
-
-}
-
-
-/* ===========================
-   CONTENT
-=========================== */
-
-#content{
-
-    width:700px;
-    max-width:90vw;
-
-    margin-top:70px;
-
-    text-align:center;
-
-    min-height:140px;
-
-}
-
-.panel{
-
-    display:none;
-
-    animation:fadeContent .5s ease;
-
-}
-
-.panel h2{
-
-    font-family:"IM Fell English",serif;
-
-    font-size:2rem;
-
-    font-weight:400;
-
-    margin-bottom:18px;
-
-}
-
-.panel p{
-
-    font-size:1rem;
-
-    line-height:1.8;
-
-    color:rgba(255,255,255,.85);
-
-}
-
-.panel a{
-
-    color:#f3f0e6;
-
-    text-decoration:none;
-
-}
-
-.panel a:hover{
-
-    color:white;
-
-}
-
-
-/* ===========================
-   ANIMATIONS
-=========================== */
-
-@keyframes fadeIn{
+@keyframes fade{
 
     from{
 
@@ -243,19 +91,316 @@ nav button:hover{
 
 }
 
+nav{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+    text-align:center;
+
+}
+
+nav button{
+
+    background:none;
+    border:none;
+
+    color:#f3f0e6;
+
+    cursor:pointer;
+
+    font-family:"IM Fell English",serif;
+
+    font-size:2rem;
+
+    letter-spacing:.15em;
+
+    transition:.4s;
+
+}
+
+nav button:hover{
+
+    color:#fff;
+
+    letter-spacing:.25em;
+
+}
+
+.section{
+
+    display:none;
+
+    position:absolute;
+
+    bottom:60px;
+
+    text-align:center;
+
+    max-width:700px;
+
+    padding:20px;
+
+    animation:fadeContent .5s ease;
+
+}
+
+.section h2{
+
+    font-family:"IM Fell English",serif;
+
+    font-weight:400;
+
+    margin-bottom:15px;
+
+}
+
+.section p{
+
+    line-height:1.7;
+
+}
+
+.section a{
+
+    color:#f3f0e6;
+
+    text-decoration:none;
+
+}
+
+.section a:hover{
+
+    color:white;
+
+}
+
+.small{
+
+    opacity:.7;
+
+    font-size:.95rem;
+
+    margin-top:20px;
+
+}
+
 @keyframes fadeContent{
 
     from{
 
         opacity:0;
-        transform:translateY(10px);
 
     }
 
     to{
 
         opacity:1;
-        transform:translateY(0);
+
+    }
+
+}html,
+body{
+    margin:0;
+    height:100%;
+    background:#000;
+    color:#f3f0e6;
+    overflow:hidden;
+}
+
+body{
+    font-family:Inter,sans-serif;
+}
+
+#intro,
+#menu{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#000;
+
+    transition:opacity 1.5s ease;
+
+}
+
+#menu{
+
+    opacity:0;
+    pointer-events:none;
+
+}
+
+h1{
+
+    font-family:"IM Fell English",serif;
+
+    font-size:clamp(80px,10vw,170px);
+
+    letter-spacing:.85em;
+
+    padding-left:.85em;
+
+    font-weight:400;
+
+    cursor:pointer;
+
+    animation:fade 4s ease forwards;
+
+    transition:
+        letter-spacing 1s,
+        color 1s,
+        text-shadow 1s;
+
+    color:#f3f0e6;
+
+}
+
+h1:hover{
+
+    letter-spacing:1em;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.2),
+        0 0 30px rgba(255,255,255,.1);
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        filter:blur(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+        filter:blur(0);
+
+    }
+
+}
+
+nav{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+    text-align:center;
+
+}
+
+nav button{
+
+    background:none;
+    border:none;
+
+    color:#f3f0e6;
+
+    cursor:pointer;
+
+    font-family:"IM Fell English",serif;
+
+    font-size:2rem;
+
+    letter-spacing:.15em;
+
+    transition:.4s;
+
+}
+
+nav button:hover{
+
+    color:#fff;
+
+    letter-spacing:.25em;
+
+}
+
+.section{
+
+    display:none;
+
+    position:absolute;
+
+    bottom:60px;
+
+    text-align:center;
+
+    max-width:700px;
+
+    padding:20px;
+
+    animation:fadeContent .5s ease;
+
+}
+
+.section h2{
+
+    font-family:"IM Fell English",serif;
+
+    font-weight:400;
+
+    margin-bottom:15px;
+
+}
+
+.section p{
+
+    line-height:1.7;
+
+}
+
+.section a{
+
+    color:#f3f0e6;
+
+    text-decoration:none;
+
+}
+
+.section a:hover{
+
+    color:white;
+
+}
+
+.small{
+
+    opacity:.7;
+
+    font-size:.95rem;
+
+    margin-top:20px;
+
+}
+
+@keyframes fadeContent{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
 
     }
 
