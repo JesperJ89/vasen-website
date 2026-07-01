@@ -1,0 +1,57 @@
+/* ====== RESET ====== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ====== PAGE ====== */
+
+body {
+    background: #000;
+    color: #ffffff;
+    font-family: "IM Fell English", serif;
+    overflow: hidden;
+}
+
+/* ====== INTRO ====== */
+
+.intro {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ====== TITLE ====== */
+
+#title {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: normal;
+    letter-spacing: 0.6em;
+
+    opacity: 0;
+
+    animation: fadeIn 2s ease forwards;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+/* ====== ANIMATION ====== */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
