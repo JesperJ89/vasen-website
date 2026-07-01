@@ -21,94 +21,96 @@
 
     <!-- INTRO -->
 
-    <section id="intro">
+    <div id="intro">
 
-        <h1 id="title">V Ä S E N</h1>
+        <h1 id="title">VÄSEN</h1>
 
-    </section>
+        <div class="small">
+            Click the title to enter
+        </div>
+
+    </div>
 
 
     <!-- MENU -->
 
-    <section id="menu">
+    <div id="menu">
 
         <nav>
 
-            <button data-target="short">
+            <button data-panel="short">
                 The Short Film
             </button>
 
-            <button data-target="feature">
+            <button data-panel="feature">
                 The Feature Film
             </button>
 
-            <button data-target="news">
+            <button data-panel="news">
                 News
             </button>
 
-            <button data-target="contact">
+            <button data-panel="contact">
                 Contact
             </button>
 
         </nav>
 
 
-        <div id="content">
+        <div class="section" id="short">
 
-            <div class="panel" id="short">
+            <h2>The Short Film</h2>
 
-                <h2>The Short Film</h2>
-
-                <p>
-                    Currently on its festival journey.
-                </p>
-
-            </div>
-
-
-            <div class="panel" id="feature">
-
-                <h2>The Feature Film</h2>
-
-                <p>
-                    Currently in development.
-                </p>
-
-            </div>
-
-
-            <div class="panel" id="news">
-
-                <h2>News</h2>
-
-                <p>
-                    More updates coming soon.
-                </p>
-
-            </div>
-
-
-            <div class="panel" id="contact">
-
-                <h2>Contact</h2>
-
-                <p>
-
-                    General enquiries
-
-                    <br><br>
-
-                    <a href="mailto:magnus@ntproductions.se">
-                        magnus@ntproductions.se
-                    </a>
-
-                </p>
-
-            </div>
+            <p>
+                Currently on its festival journey.
+            </p>
 
         </div>
 
-    </section>
+
+        <div class="section" id="feature">
+
+            <h2>The Feature Film</h2>
+
+            <p>
+                In development. Planned for production in northern Skåne.
+            </p>
+
+        </div>
+
+
+        <div class="section" id="news">
+
+            <h2>News</h2>
+
+            <p>
+                More updates coming soon.
+            </p>
+
+        </div>
+
+
+        <div class="section" id="contact">
+
+            <h2>Contact</h2>
+
+            <p>
+
+                <strong>General enquiries</strong>
+
+                <br><br>
+
+                <a href="mailto:magnus@ntproductions.se">
+
+                    magnus@ntproductions.se
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
 
