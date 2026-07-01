@@ -1,57 +1,65 @@
-/* ====== RESET ====== */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ====== PAGE ====== */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: #000;
-    color: #ffffff;
+    color: #fff;
     font-family: "IM Fell English", serif;
-    overflow: hidden;
 }
 
-/* ====== INTRO ====== */
-
 .intro {
-    width: 100vw;
     height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* ====== TITLE ====== */
-
 #title {
     font-size: clamp(3rem, 8vw, 7rem);
     font-weight: normal;
-    letter-spacing: 0.6em;
-
-    opacity: 0;
-
-    animation: fadeIn 2s ease forwards;
-
+    letter-spacing: 0.5em;
     cursor: pointer;
-
     user-select: none;
+    transition: opacity 0.8s ease;
 }
 
-/* ====== ANIMATION ====== */
+.menu {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-@keyframes fadeIn {
+.menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    text-align: center;
+}
 
-    from {
-        opacity: 0;
-    }
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.2rem;
+    transition: opacity .25s ease;
+}
 
-    to {
-        opacity: 1;
-    }
+.menu a:hover {
+    opacity: .6;
+}
 
+.hidden {
+    display: none;
+}
+
+section:not(.intro):not(.menu) {
+    min-height: 100vh;
+    padding: 8rem 10vw;
 }
